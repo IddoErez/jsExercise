@@ -54,7 +54,6 @@ app.get('/books', function (req, res) {
     fs.readFile(process.argv[3], (err, data) => {
         if (err) { console.err(err) }
         data = JSON.parse(data)
-        // console.log(data)
         res.json(data)
     })
 })
