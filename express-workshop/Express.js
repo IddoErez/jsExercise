@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const path = require('path');
 const bodyparser = require('body-parser')
-const crypto = require('crypto') 
+const crypto = require('crypto')
 const fs = require('fs')
 
 
@@ -50,13 +50,13 @@ const fs = require('fs')
 //      }) 
 // app.listen(process.argv[2])
 //------------------------------Exercise 8-------------------------------
-app.get('/books', function(req, res) {
-    fs.readFile(process.argv[3],(err, data) =>{
- if (err) {console.err(err)}
- data = JSON.parse(data.toString())
-// console.log(data)
- res.json(data)
-})})
+app.get('/books', function (req, res) {
+    fs.readFile(process.argv[3], (err, data) => {
+        if (err) { console.err(err) }
+        data = JSON.parse(data)
+        res.json(data)
+    })
+})
 
 app.listen(process.argv[2])
 
